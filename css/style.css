@@ -16,13 +16,13 @@ body{
     color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
-    
 }
 
 main{
     margin-left: 15%;
     margin-right: 15%;
     background-color: transparent;
+
 }
 
 .green{
@@ -52,6 +52,10 @@ main{
     outline: none;
     box-shadow: none;
     background-color: var(--green);
+}
+
+.navbar-brand img{
+    height: 2.4rem;
 }
 
 .navbar-brand, .nav-link{
@@ -103,6 +107,14 @@ main{
     width: 80%;
     color: #acacac;
     word-wrap: break-word;
+}
+
+.title{
+    font-size: 1.5rem;
+}
+
+.sub-title{
+    font-size: 1rem;
 }
 
 @media (min-width: 768px){
