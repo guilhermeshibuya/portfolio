@@ -1,46 +1,49 @@
 @import "bubble.scss";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --green: #189b7c;
-    font-size: 18px;
+html {
+    font-size: 1rem;
 }
 
-body{
+:root {
+    --green: #189b7c;
+}
+
+body {
     background-color: #1a1e23;
     color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
 }
 
-main{
+main {
     margin-left: 15%;
     margin-right: 15%;
     background-color: transparent;
 
 }
 
-.green{
+.green {
     color: var(--green);
 }
 
-.btn{
+.btn {
     border-color: var(--green);
     color: var(--green);
-    transition: .3s ease-in;
+    transition: .3s ease-in-out;
 }
 
-.btn:hover{
+.btn:hover {
     border-color: var(--green);
     background-color: #189b7c36;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border-color: var(--green);
     transition: .3s ease-in-out;
 }
@@ -54,26 +57,27 @@ main{
     background-color: var(--green);
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 2.4rem;
 }
 
-.navbar-brand, .nav-link{
+.navbar-brand,
+.nav-link {
     color: white;
-    transition: .3s ease-in;
+    transition: .3s ease-in-out;
 }
 
-.nav-link{
+.nav-link {
     display: inline-block;
     position: relative;
     font-weight: 300;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: var(--green);
 }
 
-.nav-link::after{
+.nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -81,64 +85,146 @@ main{
     width: 100%;
     height: .1em;
     background-color: var(--green);
-    transition: transform .3s ease-in;
+    transition: transform .4s ease-in-out;
     transform: scale(0);
     transform-origin: center;
 }
 
-.nav-link:hover::after{
+.nav-link:hover::after {
     transform: scale(1);
 }
 
-#home{
+#home {
     margin-top: 10%;
 }
 
-.section-content{
+#home,
+#about,
+#projects {
+    min-height: 100vh;
+}
+
+.section-content {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.big-txt{
+.big-txt {
     font-size: 1.8rem;
 }
 
-.light-txt{
+.light-txt {
     width: 80%;
     color: #acacac;
     word-wrap: break-word;
 }
 
-.title{
+.title {
     font-size: 1.5rem;
 }
 
-.sub-title{
-    font-size: 1rem;
+.sub-title {
+    font-size: 1.2rem;
 }
 
-@media (min-width: 768px){
-    main{
+.img-fluid{
+    opacity: .6;
+    transition: .35s ease-in-out;
+}
+
+.img-fluid:hover{
+    opacity: 1;
+}
+
+.img-holder{
+    position: relative;
+    max-width: 50%;
+    background: rgb(24,155,124);
+    background: linear-gradient(60deg, rgba(24,155,124,1) 0%, rgba(95,81,198,1) 100%);
+}
+
+.img-holder::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--green);
+    width: 45%;
+    height: 45%;
+    top: -3.5%;
+    left: -3.6%;
+    clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 8%, 100% 8%, 100% 100%, 100% 100%, 37% 100%, 100% 100%, 100% 0%);
+    transition: .35s ease-in-out;
+}
+
+.img-holder::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--green);
+    width: 45%;
+    height: 45%;
+    bottom: -3.6%;
+    right: -3.5%;
+    clip-path: polygon(0% 0%, 0% 100%, 0 0, 0 0, 92% 0, 92% 92%, 0 92%, 0 100%, 100% 100%, 100% 0%);
+    transition: .35s ease-in-out;
+}
+
+.img-holder:hover::before{
+    transform: translate(-10%, -10%);
+}
+
+.img-holder:hover::after{
+    transform: translate(10%, 10%);
+}
+
+
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+
+    main {
         margin-left: 20%;
         margin-right: 20%;
     }
 
-    #home{
+    #home {
         margin-top: 10%;
     }
-    
-    .section-content{
+
+    .section-content {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
     }
-    
-    .big-txt{
+
+    .big-txt {
         font-size: 2.2rem;
+    }
+
+    .img-holder {
+        max-width: 100%;
     }
 }
 
-@media (min-width: 992px){
-    .big-txt{
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+    html {
+        font-size: 1.2rem;
+    }
+
+    .big-txt {
         font-size: 3rem;
     }
 }
+
+/* X-Large devices */
+@media (min-width: 1200px) {
+    html {
+        font-size: 1.3rem;
+    }
+}
+
+/* XX-Large devices */
+@media (min-width: 1400px) {}
