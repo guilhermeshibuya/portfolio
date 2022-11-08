@@ -172,22 +172,18 @@ a .green:hover {
     transform: translate(10%, 10%);
 }
 
-/* .section-decoration {
-    display: inline-block;
-    position: relative;
+ul {
+    list-style: none;
 }
 
-.section-decoration::after {
-    content: '';
-    display: block;
-    position: relative;
-    background-color: var(--green);
-    width: 200px;
-    height: 1px;
-    top: -.85rem;
-    margin-left: 85%;
-} */
-
+ul li::before {
+    content: "\2022";
+    color: var(--green);
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+}
 
 /* Small devices (landscape phones) */
 @media (min-width: 576px) {}
