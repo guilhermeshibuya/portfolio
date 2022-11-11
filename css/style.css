@@ -172,11 +172,11 @@ a .green:hover {
     transform: translate(10%, 10%);
 }
 
-ul {
+#about ul {
     list-style: none;
 }
 
-ul li::before {
+#about ul li::before {
     content: "\2022";
     color: var(--green);
     font-weight: bold;
