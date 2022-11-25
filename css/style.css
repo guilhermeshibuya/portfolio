@@ -8,6 +8,7 @@
 
 html {
     font-size: 1rem;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -113,6 +114,10 @@ a .green:hover {
     margin-bottom: 1rem;
 }
 
+.section-content p {
+    margin-bottom: 0;
+}
+
 .light-txt {
     width: 80%;
     color: #acacac;
@@ -183,6 +188,10 @@ a .green:hover {
     display: inline-block;
     width: 1rem;
     margin-left: -1rem;
+}
+
+.typing-animation {
+    animation: blinkCursor 700ms infinite normal;
 }
 
 /* Small devices (landscape phones) */
