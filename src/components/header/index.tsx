@@ -9,24 +9,25 @@ export const Header = () => {
 
   return (
     <header className="w-full">
-      <nav className="bg-neutral-950 py-3 border-b-2 border-neutral-300 flex justify-between items-center">
+      <nav className="bg-neutral-950 py-3 border-b-2 border-neutral-300 flex justify-between items-center lg:py-6">
         <Logo />
-
         <div
-          className={
-            isActive
-              ? `${styles.menuActive} ${styles.menuButton}`
-              : styles.menuButton + ' lg:hidden'
-          }
+          className="h-6 w-6 flex items-center cursor-pointer md:hidden"
           onClick={() => setIsActive(!isActive)}
-        />
+        >
+          <div
+            className={`${styles.menuButton} ${
+              isActive && `${styles.menuActive}`
+            }`}
+          />
+        </div>
 
         <ul
-          className={`${
+          className={`text-neutral-50 md:flex md:justify-end md:gap-8 lg:gap-10 lg:text-lg ${
             isActive
-              ? `absolute top-[50px] w-full left-6 flex flex-col gap-2 py-3 ${styles.fadeInLeft}`
+              ? `absolute top-[50px] w-full left-0 p-6 flex flex-col gap-2 py-3 ${styles.fadeInLeft}`
               : 'hidden'
-          } text-neutral-50 lg:flex lg:justify-end lg:gap-10`}
+          }`}
         >
           {links.map((link, index) => {
             return (
