@@ -23,7 +23,7 @@ export const Header = () => {
         </div>
 
         <ul
-          className={`text-neutral-50 md:flex md:justify-end md:gap-8 lg:gap-10 lg:text-lg ${
+          className={`text-neutral-50 bg-neutral-950 h-full md:flex md:justify-end md:gap-8 lg:gap-10 lg:text-lg ${
             isActive
               ? `absolute top-[50px] w-full left-0 p-6 flex flex-col gap-2 py-3 ${styles.fadeInLeft}`
               : 'hidden'
