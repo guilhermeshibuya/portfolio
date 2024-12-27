@@ -1,0 +1,54 @@
+.menuButton {
+  position: relative;
+}
+
+.menuButton,
+.menuButton::before,
+.menuButton::after {
+  background-color: #8b5cf6;
+  height: 2px;
+  width: 24px;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menuButton::before {
+  content: '';
+  margin-top: -6px;
+  position: absolute;
+}
+
+.menuButton::after {
+  content: '';
+  margin-top: 6px;
+  position: absolute;
+}
+
+.menuActive.menuButton::before {
+  margin-top: 0;
+  transform: rotate(405deg);
+}
+
+.menuActive.menuButton {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.menuActive.menuButton::after {
+  margin-top: 0;
+  transform: rotate(-405deg);
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 0.5s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
