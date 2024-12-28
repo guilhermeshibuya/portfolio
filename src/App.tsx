@@ -1,6 +1,7 @@
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import { AboutPage } from './pages/about'
+import { ExperiencesPage } from './pages/experiences'
 import { HomePage } from './pages/home'
 import { ProjectsPage } from './pages/projects'
 import { SkillsPage } from './pages/skills'
@@ -21,6 +22,9 @@ function App() {
         </section>
         <section className="flex-shrink-0 w-full snap-start">
           <ProjectsPage />
+        </section>
+        <section className="flex-shrink-0 w-full snap-start">
+          <ExperiencesPage />
         </section>
       </div>
       <Footer />
