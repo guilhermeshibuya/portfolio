@@ -6,7 +6,7 @@ export const AboutPage = () => {
   return (
     <main className="mx-6">
       <PageTitle subtitle="um pouco" title="sobre mim" />
-      <div className="grid grid-rows-auto justify-items-center items-start gap-3 mb-16 md:grid-rows-1 md:grid-cols-2 md:gap-6 md:items-center lg:gap-12 lg:grid-cols-3">
+      <div className="grid justify-items-center items-start gap-3 mb-16 md:grid-rows-1 md:grid-cols-2 md:gap-6 md:items-center lg:gap-12 lg:grid-cols-3">
         <div className="font-body space-y-3 lg:col-span-2">
           <Paragraph>
             Atualmente estou cursando o 8º período de{' '}

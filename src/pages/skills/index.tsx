@@ -25,7 +25,7 @@ export const SkillsPage = () => {
   return (
     <main className="mx-6">
       <PageTitle subtitle="linguagens e" title="tecnologias" />
-      <div className="max-w-3xl md:grid md:grid-rows-auto md:gap-6 lg:grid-cols-2 lg:max-w-full">
+      <div className="max-w-3xl md:grid md:gap-6 lg:grid-cols-2 lg:max-w-full">
         <div className="space-y-6">
           <Paragraph>
             Sou apaixonado por tecnologia e sempre busco explorar e aprofundar
