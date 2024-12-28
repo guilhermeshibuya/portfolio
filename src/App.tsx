@@ -1,14 +1,30 @@
 import { Footer } from './components/footer'
 import { Header } from './components/header'
+import { AboutPage } from './pages/about'
 import { HomePage } from './pages/home'
+import { ProjectsPage } from './pages/projects'
+import { SkillsPage } from './pages/skills'
 
 function App() {
   return (
-    <>
+    <div className="max-w-6xl mx-auto">
       <Header />
-      <HomePage />
+      <div className="flex overflow-x-auto snap-x snap-mandatory ">
+        <section className="flex-shrink-0 w-full snap-start">
+          <HomePage />
+        </section>
+        <section className="flex-shrink-0 w-full snap-start">
+          <AboutPage />
+        </section>
+        <section className="flex-shrink-0 w-full snap-start">
+          <SkillsPage />
+        </section>
+        <section className="flex-shrink-0 w-full snap-start">
+          <ProjectsPage />
+        </section>
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }
 

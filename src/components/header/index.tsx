@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <header className="w-full">
-      <nav className="bg-neutral-950 py-3 border-b-2 border-neutral-300 flex justify-between items-center lg:py-6">
+      <nav className="bg-neutral-950 py-3 mx-6 border-b-2 border-neutral-300 flex justify-between items-center lg:py-6">
         <Logo />
         <div
           className="h-6 w-6 flex items-center cursor-pointer md:hidden"

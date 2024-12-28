@@ -9,7 +9,7 @@ export const Button = ({
 }: ButtonProps) => {
   const buttonStyle = () => {
     const baseStlye =
-      'flex justify-center items-center gap-[0.625rem] py-2 px-3 cursor-pointer rounded font-semibold text-xs uppercase w-full shadow-light transition-colors md:w-auto lg:text-lg lg:px-5'
+      'flex justify-center items-center gap-[0.625rem] py-2 px-3 cursor-pointer rounded-lg font-semibold text-xs uppercase w-full shadow-light transition-colors md:w-auto lg:text-lg lg:px-5'
 
     const variantStyle =
       variant === 'primary'
