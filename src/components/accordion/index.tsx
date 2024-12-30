@@ -14,7 +14,7 @@ export const Accordion = ({ title, date, children }: AccordionProps) => {
   return (
     <div className="space-y-2">
       <button
-        className="flex justify-between items-center font-body text-sm text-neutral-100 w-full bg-neutral-900 px-3 py-3 rounded-lg cursor-pointer"
+        className="flex justify-between items-center font-body text-sm text-neutral-100 w-full bg-neutral-900 px-3 py-3 rounded-lg cursor-pointer lg:text-xl"
         onClick={() => setIsActive(!isActive)}
       >
         <span>{title}</span>
@@ -30,7 +30,7 @@ export const Accordion = ({ title, date, children }: AccordionProps) => {
       <section
         className={`${
           !isActive && 'hidden overflow-hidden'
-        } font-body text-sm text-neutral-200 bg-neutral-900 px-3 py-3 rounded-lg space-y-3 ${
+        } font-body text-sm text-neutral-200 bg-neutral-900 px-3 py-3 rounded-lg space-y-3 lg:text-base ${
           styles.fadeInDown
         }`}
       >

@@ -2,15 +2,17 @@ import { useState } from 'react'
 import { Logo } from '../../assets/guilherme'
 import styles from './index.module.css'
 
-const links = ['Sobre', 'Habilidades', 'Projetos', 'Experiência', 'Contato']
+const links = ['Sobre', 'Habilidades', 'Projetos', 'Experiências', 'Contato']
 
-export const Header = () => {
+export const Header = ({ activePage }: { activePage: number }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
     <header className="w-full">
       <nav className="bg-neutral-950 py-3 mx-6 border-b-2 border-neutral-300 flex justify-between items-center lg:py-6">
-        <Logo />
+        <a href="#home">
+          <Logo />
+        </a>
         <div
           className="h-6 w-6 flex items-center cursor-pointer md:hidden"
           onClick={() => setIsActive(!isActive)}
@@ -33,9 +35,13 @@ export const Header = () => {
             return (
               <li
                 key={index}
-                className="font-semibold py-2 hover:text-violet-500"
+                className={`font-semibold py-2 ${
+                  activePage === index + 1
+                    ? 'text-violet-500 hover:text-violet-600'
+                    : 'hover:text-violet-500'
+                }`}
               >
-                <a>{link}</a>
+                <a href={`#${link.toLowerCase().replace('ê', 'e')}`}>{link}</a>
               </li>
             )
           })}

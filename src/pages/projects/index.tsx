@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 
 export const ProjectsPage = () => {
   return (
-    <main className="mx-6 mb-16">
+    <main className="mx-6 mb-16" id="projetos">
       <PageTitle subtitle="alguns" title="projetos" />
       <div className="grid gap-3 lg:grid-cols-4 lg:grid-rows-2 lg:gap-6">
         <ProjectCard

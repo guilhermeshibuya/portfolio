@@ -1,9 +1,23 @@
-type ButtonProps = React.ComponentProps<'button'> & {
+import React from 'react'
+
+type ButtonBaseProps = {
+  children: React.ReactNode
   variant?: 'primary' | 'secondary'
 }
 
+type ButtonAsLinkProps = ButtonBaseProps & {
+  isLink: true
+} & React.ComponentProps<'a'>
+
+type ButtonAsButtonProps = ButtonBaseProps & {
+  isLink?: false
+} & React.ComponentProps<'button'>
+
+type ButtonProps = ButtonAsLinkProps | ButtonAsButtonProps
+
 export const Button = ({
   children,
+  isLink = false,
   variant = 'primary',
   ...props
 }: ButtonProps) => {
@@ -18,8 +32,13 @@ export const Button = ({
 
     return `${baseStlye} ${variantStyle}`
   }
-  return (
-    <button className={buttonStyle()} {...props}>
+
+  return isLink ? (
+    <a className={buttonStyle()} {...(props as ButtonAsLinkProps)}>
+      {children}
+    </a>
+  ) : (
+    <button className={buttonStyle()} {...(props as ButtonAsButtonProps)}>
       {children}
     </button>
   )

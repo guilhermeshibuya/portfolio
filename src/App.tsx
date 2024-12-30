@@ -1,31 +1,52 @@
+import React, { useState } from 'react'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import { AboutPage } from './pages/about'
+import { ContactPage } from './pages/contact'
 import { ExperiencesPage } from './pages/experiences'
 import { HomePage } from './pages/home'
 import { ProjectsPage } from './pages/projects'
 import { SkillsPage } from './pages/skills'
+import { useHorizontalScroll } from './hooks/useHorizontalScroll'
+import './i18n'
+import { useTranslation } from 'react-i18next'
+
+const pages = [
+  <HomePage />,
+  <AboutPage />,
+  <SkillsPage />,
+  <ProjectsPage />,
+  <ExperiencesPage />,
+  <ContactPage />,
+]
 
 function App() {
+  const [activePage, setActivePage] = useState(0)
+  const scrollRef = useHorizontalScroll()
+  const { i18n } = useTranslation()
+
+  i18n.changeLanguage('pt-BR')
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const currentIndex = Math.round(
+      e.currentTarget.scrollLeft / e.currentTarget.offsetWidth,
+    )
+    setActivePage(currentIndex)
+  }
+
   return (
     <div className="max-w-6xl mx-auto">
-      <Header />
-      <div className="flex overflow-x-auto snap-x snap-mandatory ">
-        <section className="flex-shrink-0 w-full snap-start">
-          <HomePage />
-        </section>
-        <section className="flex-shrink-0 w-full snap-start">
-          <AboutPage />
-        </section>
-        <section className="flex-shrink-0 w-full snap-start">
-          <SkillsPage />
-        </section>
-        <section className="flex-shrink-0 w-full snap-start">
-          <ProjectsPage />
-        </section>
-        <section className="flex-shrink-0 w-full snap-start">
-          <ExperiencesPage />
-        </section>
+      <Header activePage={activePage} />
+      <div
+        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+        onScroll={handleScroll}
+        ref={scrollRef}
+      >
+        {pages.map((page, index) => (
+          <section key={index} className="flex-shrink-0 w-full snap-start">
+            {page}
+          </section>
+        ))}
       </div>
       <Footer />
     </div>

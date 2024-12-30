@@ -1,11 +1,12 @@
 import { Accordion } from '../../components/accordion'
 import { PageTitle } from '../../components/page-title/page-title'
+import Experiencias from '../../assets/experiencias.svg'
 
 export const ExperiencesPage = () => {
   return (
-    <main className="mx-6">
+    <main className="mx-6" id="experiencias">
       <PageTitle subtitle="minhas" title="experiências" />
-      <div className="space-y-3">
+      <div className="space-y-3 lg:grid lg:grid-cols-2 lg:gap-6">
         <Accordion title="UTFPR - Pesquisador" date="2023 - 2024">
           <p>
             Atuei como <span className="text-violet-500">pesquisador</span> de
@@ -43,6 +44,11 @@ export const ExperiencesPage = () => {
             produção de artigos.
           </p>
         </Accordion>
+        <img
+          className="hidden overflow-hidden lg:block lg:overflow-auto"
+          src={Experiencias}
+          alt=""
+        />
       </div>
     </main>
   )
