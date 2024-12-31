@@ -37,7 +37,7 @@ export const ContactPage = () => {
               return (
                 <li
                   key={index}
-                  className="flex items-center gap-3 hover:text-violet-500"
+                  className="flex items-center gap-3 transition-colors hover:text-violet-500"
                 >
                   {link.icon}
                   <a href={link.link} target="_blank" rel="noopener noreferrer">
