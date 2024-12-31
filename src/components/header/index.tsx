@@ -48,7 +48,9 @@ export const Header = ({ activePage }: { activePage: number }) => {
                     : 'hover:text-violet-500'
                 }`}
               >
-                <a href={link.href}>{link.component}</a>
+                <a href={link.href} onClick={() => setIsActive(false)}>
+                  {link.component}
+                </a>
               </li>
             )
           })}
