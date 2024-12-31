@@ -8,7 +8,6 @@ import { HomePage } from './pages/home'
 import { ProjectsPage } from './pages/projects'
 import { SkillsPage } from './pages/skills'
 import { useHorizontalScroll } from './hooks/useHorizontalScroll'
-import './i18n'
 import './App.css'
 
 const pages = [
