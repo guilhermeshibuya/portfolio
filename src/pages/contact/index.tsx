@@ -35,7 +35,10 @@ export const ContactPage = () => {
           <ul className="space-y-3">
             {links.map((link, index) => {
               return (
-                <li key={index} className="flex items-center gap-3">
+                <li
+                  key={index}
+                  className="flex items-center gap-3 hover:text-violet-500"
+                >
                   {link.icon}
                   <a href={link.link} target="_blank" rel="noopener noreferrer">
                     {link.text}
