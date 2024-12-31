@@ -9,13 +9,14 @@ import { ArrowRight } from 'lucide-react'
 export const ProjectsPage = () => {
   return (
     <main className="mx-6 mb-16" id="projetos">
-      <PageTitle subtitle="alguns" title="projetos" />
+      <PageTitle subtitlePath="projects.subtitle" titlePath="projects.title" />
       <div className="grid gap-3 lg:grid-cols-4 lg:grid-rows-2 lg:gap-6">
         <ProjectCard
           title="Forestfy"
           img={Forestfy}
           variant="large"
           containerClassName="col-span-2 lg:row-span-2"
+          href="https://github.com/guilhermeshibuya/reconhecimento-florestal"
         />
         <div className="grid grid-cols-2 gap-3 col-span-2 lg:gap-6 order-last">
           <ProjectCard
@@ -29,8 +30,14 @@ export const ProjectsPage = () => {
             img={Plannner}
             variant="small"
             containerClassName="aspect-square lg:aspect-auto"
+            href="https://github.com/guilhermeshibuya/nlw-planner"
           />
-          <a className="flex justify-center gap-[0.625rem] items-center font-body uppercase bg-neutral-900 text-base text-neutral-200 px-6 py-3 col-span-2 rounded-lg cursor-pointer lg:col-span-1 lg:text-lg lg:py-6">
+          <a
+            className="flex justify-center gap-[0.625rem] items-center font-body uppercase bg-neutral-900 text-base text-neutral-200 px-6 py-3 col-span-2 rounded-lg cursor-pointer lg:col-span-1 lg:text-lg lg:py-6 hover:text-violet-500 transition-colors"
+            href="https://github.com/guilhermeshibuya?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             mais trabalhos
             <ArrowRight />
           </a>
@@ -41,6 +48,7 @@ export const ProjectsPage = () => {
           variant="large"
           containerClassName="col-span-2 max-h-32 md:max-h-72"
           imageClassName="object-center max-h-32 md:max-h-72"
+          href="https://github.com/guilhermeshibuya/dogs-next"
         />
       </div>
     </main>

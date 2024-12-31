@@ -3,6 +3,7 @@ import Linkedin from '../../assets/linkedin.svg'
 import Github from '../../assets/github.svg'
 import Contato from '../../assets/contato.svg'
 import { Mail } from 'lucide-react'
+import { Trans } from 'react-i18next'
 
 const links = [
   {
@@ -25,12 +26,11 @@ const links = [
 export const ContactPage = () => {
   return (
     <main className="mx-6" id="contato">
-      <PageTitle subtitle="entre em" title="contato" />
+      <PageTitle subtitlePath="contact.subtitle" titlePath="contact.title" />
       <div className="md:grid md:grid-cols-2 md:gap-6">
         <div className="font-body text-sm text-neutral-200 md:text-base lg:text-lg">
           <p className="mb-6">
-            Ficou interessado no meu trabalho? Entre em contato comigo e
-            marcamos uma conversa 👋
+            <Trans i18nKey="contact.description" />
           </p>
           <ul className="space-y-3">
             {links.map((link, index) => {

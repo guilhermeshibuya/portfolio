@@ -10,6 +10,7 @@ import { SkillsPage } from './pages/skills'
 import { useHorizontalScroll } from './hooks/useHorizontalScroll'
 import './i18n'
 import { useTranslation } from 'react-i18next'
+import './App.css'
 
 const pages = [
   <HomePage />,
@@ -47,7 +48,7 @@ function App() {
         ref={scrollRef}
       >
         {pages.map((page, index) => (
-          <section key={index} className="flex-shrink-0 w-full snap-start">
+          <section key={index} className={`flex-shrink-0 w-full snap-start`}>
             {page}
           </section>
         ))}

@@ -12,7 +12,7 @@ export const useHorizontalScroll = () => {
 
         element.scrollBy({
           top: 0,
-          left: e.deltaY > 0 ? -30 : 30,
+          left: e.deltaY > 0 ? 30 : -30,
           behavior: 'smooth',
         })
       }

@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import styles from './index.module.css'
 
 type ProjectCardProps = {
   title: string
@@ -6,6 +7,7 @@ type ProjectCardProps = {
   variant: 'large' | 'small'
   containerClassName?: string
   imageClassName?: string
+  href?: string
 }
 
 export const ProjectCard = ({
@@ -14,6 +16,7 @@ export const ProjectCard = ({
   variant,
   containerClassName,
   imageClassName,
+  href,
 }: ProjectCardProps) => {
   const variantStyle =
     variant === 'large'
@@ -27,18 +30,22 @@ export const ProjectCard = ({
 
   return (
     <div
-      className={`grid grid-cols-1 rounded-lg overflow-hidden shadow-light ${containerClassName}`}
+      className={`grid grid-cols-1 rounded-lg overflow-hidden shadow-light ${containerClassName} ${styles.card}`}
     >
       <img
         className={`col-start-1 row-start-1 object-cover w-full h-full ${imageClassName}`}
         src={img}
         alt={title}
       />
-      <div className="bg-[rgba(0,0,0,0.3)] h-full w-full col-start-1 row-start-1" />
+      <div
+        className={`transition-colors h-full w-full col-start-1 row-start-1 ${styles.cardBg}`}
+      />
       <div className="col-start-1 row-start-1 p-3">
         <a
           className={`flex items-center gap-2 text-neutral-200 font-display ${variantStyle}`}
-          href=""
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {title}
           <ArrowRight className={`text-violet-500 ${iconVariantStyle}`} />
