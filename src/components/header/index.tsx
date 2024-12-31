@@ -1,8 +1,15 @@
 import { useState } from 'react'
 import { Logo } from '../../assets/guilherme'
 import styles from './index.module.css'
+import { Trans } from 'react-i18next'
 
-const links = ['Sobre', 'Habilidades', 'Projetos', 'Experiências', 'Contato']
+const links = [
+  { href: '#sobre', component: <Trans i18nKey="header.about" /> },
+  { href: '#habilidades', component: <Trans i18nKey="header.skills" /> },
+  { href: '#projetos', component: <Trans i18nKey="header.projects" /> },
+  { href: '#experiencias', component: <Trans i18nKey="header.experiences" /> },
+  { href: '#contato', component: <Trans i18nKey="header.contact" /> },
+]
 
 export const Header = ({ activePage }: { activePage: number }) => {
   const [isActive, setIsActive] = useState(false)
@@ -41,7 +48,7 @@ export const Header = ({ activePage }: { activePage: number }) => {
                     : 'hover:text-violet-500'
                 }`}
               >
-                <a href={`#${link.toLowerCase().replace('ê', 'e')}`}>{link}</a>
+                <a href={link.href}>{link.component}</a>
               </li>
             )
           })}

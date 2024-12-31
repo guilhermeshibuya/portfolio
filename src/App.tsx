@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import { AboutPage } from './pages/about'
@@ -23,9 +23,6 @@ const pages = [
 function App() {
   const [activePage, setActivePage] = useState(0)
   const scrollRef = useHorizontalScroll()
-  const { i18n } = useTranslation()
-
-  i18n.changeLanguage('pt-BR')
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const currentIndex = Math.round(
@@ -33,6 +30,13 @@ function App() {
     )
     setActivePage(currentIndex)
   }
+
+  const { i18n } = useTranslation()
+
+  useEffect(() => {
+    // i18n.changeLanguage('pt-BR')
+    i18n.changeLanguage('en-US')
+  }, [i18n])
 
   return (
     <div className="max-w-6xl mx-auto">
