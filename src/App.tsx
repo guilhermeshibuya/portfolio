@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import { AboutPage } from './pages/about'
@@ -9,7 +9,6 @@ import { ProjectsPage } from './pages/projects'
 import { SkillsPage } from './pages/skills'
 import { useHorizontalScroll } from './hooks/useHorizontalScroll'
 import './i18n'
-import { useTranslation } from 'react-i18next'
 import './App.css'
 
 const pages = [
@@ -31,13 +30,6 @@ function App() {
     )
     setActivePage(currentIndex)
   }
-
-  const { i18n } = useTranslation()
-
-  useEffect(() => {
-    // i18n.changeLanguage('pt-BR')
-    i18n.changeLanguage('en-US')
-  }, [i18n])
 
   return (
     <div className="max-w-6xl mx-auto">
