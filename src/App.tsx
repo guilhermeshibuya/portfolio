@@ -36,6 +36,7 @@ function App() {
       <div
         className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
         onScroll={handleScroll}
+        style={{ scrollbarWidth: 'none' }}
         ref={scrollRef}
       >
         {pages.map((page, index) => (

@@ -6,8 +6,9 @@ import translations from './locales'
 
 const i18nConfig = {
   resources: translations,
-  fallbackLng: 'en',
+  fallbackLng: 'en-US',
   defaultNS: 'translations',
+  supportedLngs: ['en-US', 'pt-BR'],
 }
 
 i18n.use(LanguageDetector).use(initReactI18next).init(i18nConfig)
